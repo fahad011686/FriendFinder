@@ -7,8 +7,8 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// require("./routing/htmlRoutes")(app);
-// require("./routing/apiRoutes")(app);
+require("./routing/apiRoutes")(app);
+require("./routing/htmlRoutes")(app);
 
 app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./public/home.html"));
