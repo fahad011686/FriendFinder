@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Survey</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- <form action="http://localhost:8080/api/friends" method="POST"> -->
+    <form>
+        <label for="">Name</label><br>
+        <input type="text" name="" id="name"><br>
+        <label for="">Age</label><br>
+        <input type="number" name="" id="age"><br>
+
+        What's You Favorite Pokemon?<br>
+        <input type="radio" id="q1" value="1">Pikachu<br>
+        <input type="radio" id="q1" value="2">Pikachu<br>
+        <input type="radio" id="q1" value="3">Pikachu<br>
+        <input type="radio" id="q1" value="4">Pikachu<br>
+        <input type="radio" id="q1" value="5">Pikachu<br>
+
+
+        <button type="submit" id="submit">Submit</button>
+    </form>
+</body>
+<script>
+    $("#submit").on("click", function (e) {
+        e.preventDefault();
+
+        var userInfo = {
+            name: $("#name").val().trim(),
+            age: $("#age").val().trim(),
+            scores: [
+            $('input[id=q1]:checked').val(),
+            $("#q2").val(),
+            $("#q3").val(),
+            $("#q4").val(),
+            $("#q5").val(),
+            $("#q6").val(),
+            $("#q7").val(),
+            $("#q8").val(),
+            $("#q9").val(),
+            $("#q10").val()
+          ]
+        }
+
+
+
+
+
+
+
+        console.log(userInfo);
+
+
+        // $.post("/api/friends", userInfo, function (data) {
+
+        // })
+    })
+</script>
+
+</html>
