@@ -17,18 +17,87 @@
         <input type="text" name="" id="name"><br>
         <label for="">Age</label><br>
         <input type="number" name="" id="age"><br>
-
-        What's You Favorite Pokemon?<br>
-        <input type="radio" id="q1" value="1">Pikachu<br>
-        <input type="radio" id="q1" value="2">Pikachu<br>
-        <input type="radio" id="q1" value="3">Pikachu<br>
-        <input type="radio" id="q1" value="4">Pikachu<br>
-        <input type="radio" id="q1" value="5">Pikachu<br>
-
-
+        <div class="questionBox">
+            What's Your Favorite Season?<br>
+            <input type="radio" id="q1" value="1">Spring<br>
+            <input type="radio" id="q1" value="3">Summer<br>
+            <input type="radio" id="q1" value="5">Fall<br>
+            <input type="radio" id="q1" value="7">Winter<br>
+        </div>
+        <div class="questionBox">
+            What's Your Favorite Pokemon?<br>
+            <input type="radio" id="q2" value="1">Pikachu<br>
+            <input type="radio" id="q2" value="2">Charmander<br>
+            <input type="radio" id="q2" value="3">Ash<br>
+            <input type="radio" id="q2" value="4">Godzilla<br>
+            <input type="radio" id="q2" value="5">Garfield<br>
+        </div>
+        <div class="questionBox">
+            What's You Favorite Color?<br>
+            <input type="radio" id="q3" value="1">Red<br>
+            <input type="radio" id="q3" value="2">Blue<br>
+            <input type="radio" id="q3" value="3">Yellow<br>
+            <input type="radio" id="q3" value="4">Green<br>
+            <input type="radio" id="q3" value="5">Black<br>
+        </div>
+        <div class="questionBox">
+            Who is your favorite Avenger?<br>
+            <input type="radio" id="q4" value="1">Cap'n America<br>
+            <input type="radio" id="q4" value="2">Thor<br>
+            <input type="radio" id="q4" value="3">Black Panther<br>
+            <input type="radio" id="q4" value="4">Wanda<br>
+            <input type="radio" id="q4" value="5">Batman<br>
+        </div>
+        <div class="questionBox">
+            Where is your dream vacation spot?<br>
+            <input type="radio" id="q5" value="1">Japan<br>
+            <input type="radio" id="q5" value="2">NYC<br>
+            <input type="radio" id="q5" value="3">Florida<br>
+            <input type="radio" id="q5" value="4">Bahamas<br>
+            <input type="radio" id="q5" value="5">Mars<br>
+        </div>
+        <!-- bottom 5 -->
+        <div class="questionBox">
+            Which of these hobbies would you rank highest?<br>
+            <input type="radio" id="q6" value="1">Sports<br>
+            <input type="radio" id="q6" value="2">Reading<br>
+            <input type="radio" id="q6" value="3">Studying<br>
+            <input type="radio" id="q6" value="4">Painting<br>
+            <input type="radio" id="q6" value="5">Slacking Off<br>
+        </div>
+        <div class="questionBox">
+            When are you the most productive?<br>
+            <input type="radio" id="q7" value="1">Morning<br>
+            <input type="radio" id="q7" value="5">Evening<br>
+            <input type="radio" id="q7" value="7">Night<br>
+        </div>
+        <div class="questionBox">
+            What genre of movies do you prefer?<br>
+            <input type="radio" id="q8" value="1">Romance<br>
+            <input type="radio" id="q8" value="2">Animated<br>
+            <input type="radio" id="q8" value="3">Comedy<br>
+            <input type="radio" id="q8" value="4">Action<br>
+            <input type="radio" id="q8" value="5">Horror<br>
+        </div>
+        <div class="questionBox">
+            How often do you drink a beer?<br>
+            <input type="radio" id="q9" value="1">Never<br>
+            <input type="radio" id="q9" value="2">Once in a while<br>
+            <input type="radio" id="q9" value="3">At parties<br>
+            <input type="radio" id="q9" value="4">Every single day<br>
+        </div>
+        <div class="questionBox">
+            What is your favorite style of pizza?<br>
+            <input type="radio" id="q10" value="1">I do not like pizza<br>
+            <input type="radio" id="q10" value="2">Fast food (Sarpino's, etc)<br>
+            <input type="radio" id="q10" value="3">Deep Dish<br>
+            <input type="radio" id="q10" value="4">Pan<br>
+            <input type="radio" id="q10" value="5">New York Style<br>
+        </div>
         <button type="submit" id="submit">Submit</button>
     </form>
 </body>
+
 <script>
     $("#submit").on("click", function (e) {
         e.preventDefault();
@@ -37,31 +106,23 @@
             name: $("#name").val().trim(),
             age: $("#age").val().trim(),
             scores: [
-            $('input[id=q1]:checked').val(),
-            $("#q2").val(),
-            $("#q3").val(),
-            $("#q4").val(),
-            $("#q5").val(),
-            $("#q6").val(),
-            $("#q7").val(),
-            $("#q8").val(),
-            $("#q9").val(),
-            $("#q10").val()
-          ]
+                $('input[id=q1]:checked').val(),
+                $('input[id=q2]:checked').val(),
+                $('input[id=q3]:checked').val(),
+                $('input[id=q4]:checked').val(),
+                $('input[id=q5]:checked').val(),
+                $('input[id=q6]:checked').val(),
+                $('input[id=q7]:checked').val(),
+                $('input[id=q8]:checked').val(),
+                $('input[id=q9]:checked').val(),
+                $('input[id=q10]:checked').val()
+            ]
         }
 
-
-
-
-
-
-
         console.log(userInfo);
+        $.post("/api/friends", userInfo, function (data) {
 
-
-        // $.post("/api/friends", userInfo, function (data) {
-
-        // })
+        })
     })
 </script>
 
