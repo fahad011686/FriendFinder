@@ -11,7 +11,6 @@
 </head>
 
 <body>
-    <!-- <form action="http://localhost:8080/api/friends" method="POST"> -->
     <form>
         <label for="">Name</label><br>
         <input type="text" name="" id="name"><br>
@@ -97,8 +96,8 @@
         <button type="submit" id="submit">Submit</button>
     </form>
 </body>
-
-<script>
+<script src="js/logic.js"></script>
+<!-- <script>
     $("#submit").on("click", function (e) {
         e.preventDefault();
 
@@ -119,11 +118,14 @@
             ]
         }
 
+        window.location = "./home.html";
+
         console.log(userInfo);
         $.post("/api/friends", userInfo, function (data) {
-
-        })
+            
+            }
+        )
     })
-</script>
+</script> -->
 
 </html>

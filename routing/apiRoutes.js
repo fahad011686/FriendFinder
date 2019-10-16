@@ -4,7 +4,7 @@ console.log(userInfo);
 
 module.exports = function (server) {
     server.post("/api/friends", function (req, res) {
-        console.log(req.body);
+        // console.log(req.body);
         userInfo.push(req.body);
         res.json(req.body)
 

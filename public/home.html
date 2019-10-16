@@ -12,36 +12,30 @@
 
 <body>
     <h1>Home Page</h1>
+
+    <img src="../app/img/logo_header.png">
+
+
     <div class="container">
-        <a href="http://localhost:8080/survey">Take Our Survey!</a>
+        <a href="./survey.html">Take Our Survey!</a>
 
     </div>
-    <!-- display all friends -->
-    <!-- <script type="text/javascript">
-        $.get("/api/friends", function (data) {
-            console.log(data);
-            // var i;
-            for (var i = 0; i < data.length; i++) {
 
-                // console.log(data[i]);
-                $('.container').append(`<div><div class='name'>${data[i].name}</div><div class='age'>Age: ${data[i].age}</div><div class='scores'>${data[i].scores}</div><hr>`);
-            }
-        });
-    </script> -->
+    <div class="container">
+        <a href="./friends.html">View All Friends</a>
 
-
+    </div>
+    
     <!-- logic -->
     <script type="text/javascript">
 
         $.get("/api/friends", function (data) {
-            compareScore = 0;
             uScore = 5;
+            compareScore = 0;
             for (var i = 0; i < data.length; i++) {
-
                 for (var o = 0; o < data[i].scores.length; o++) {
                     fScore = data[i].scores[o];
                     // console.log(fScore)
-
                     function diff(a, b) {
                         return Math.abs(a - b);
                     }
@@ -49,7 +43,7 @@
                     compareScore += total;
                 }
                 console.log(compareScore)
-
+                compareScore = 0;
             }
         });
     </script>

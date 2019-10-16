@@ -1,14 +1,20 @@
 var userInfo = [
     {
-        name: "John Dough",
+        name: "Mr. Good Match",
         age: 30,
-        scores: [1,2,3,4,5,1,2,3,4,5]
+        scores: [4,2,5,1,5,3,3,4,2,5]
     },
     {
-        name: "Test 2",
+        name: "Control",
+        age: 100,
+        scores: [4,2,5,1,4,3,3,4,2,5]
+    },
+    {
+        name: "Dr. Bad Match",
         age: 25,
-        scores: [5,5,5,5,5,1,2,3,4,5]
+        scores: [1,1,1,1,1,1,1,1,1,1]
     }
+    
 
 ];
 module.exports = userInfo;

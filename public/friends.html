@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Friend List</title>
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+</head>
+
+<body>
+    <h1>All Friends</h1>
+  
+    <div class="container">
+        <a href="./home.html">Back Home</a>
+
+    </div>
+    <!-- display all friends -->
+    <script type="text/javascript">
+        $.get("/api/friends", function (data) {
+            console.log(data);
+            // var i;
+            for (var i = 0; i < data.length; i++) {
+
+                // console.log(data[i]);
+                $('.container').append(`<div><div class='name'>${data[i].name}</div><div class='age'>Age: ${data[i].age}</div><div class='scores'>${data[i].scores}</div><hr>`);
+            }
+        });
+    </script>
+
+    <a href="/api/friends">View as raw API data.</a>
+
+</body>
+
+</html>
