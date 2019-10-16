@@ -13,18 +13,43 @@
 <body>
     <h1>Home Page</h1>
     <div class="container">
-<a href="http://localhost:8080/survey">Take Our Survey!</a>
+        <a href="http://localhost:8080/survey">Take Our Survey!</a>
 
     </div>
-
-    <script type="text/javascript">
+    <!-- display all friends -->
+    <!-- <script type="text/javascript">
         $.get("/api/friends", function (data) {
-console.log(data);
+            console.log(data);
             // var i;
             for (var i = 0; i < data.length; i++) {
 
                 // console.log(data[i]);
                 $('.container').append(`<div><div class='name'>${data[i].name}</div><div class='age'>Age: ${data[i].age}</div><div class='scores'>${data[i].scores}</div><hr>`);
+            }
+        });
+    </script> -->
+
+
+    <!-- logic -->
+    <script type="text/javascript">
+
+        $.get("/api/friends", function (data) {
+            compareScore = 0;
+            uScore = 5;
+            for (var i = 0; i < data.length; i++) {
+
+                for (var o = 0; o < data[i].scores.length; o++) {
+                    fScore = data[i].scores[o];
+                    // console.log(fScore)
+
+                    function diff(a, b) {
+                        return Math.abs(a - b);
+                    }
+                    total = diff(fScore, uScore);
+                    compareScore += total;
+                }
+                console.log(compareScore)
+
             }
         });
     </script>
