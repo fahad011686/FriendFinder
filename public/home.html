@@ -13,7 +13,7 @@
 <body>
     <h1>Home Page</h1>
 
-    <img src="../app/img/logo_header.png">
+    <img src="img/logo_header.png">
 
 
     <div class="container">
@@ -25,29 +25,6 @@
         <a href="./friends.html">View All Friends</a>
 
     </div>
-    
-    <!-- logic -->
-    <script type="text/javascript">
-
-        $.get("/api/friends", function (data) {
-            uScore = 5;
-            compareScore = 0;
-            for (var i = 0; i < data.length; i++) {
-                for (var o = 0; o < data[i].scores.length; o++) {
-                    fScore = data[i].scores[o];
-                    // console.log(fScore)
-                    function diff(a, b) {
-                        return Math.abs(a - b);
-                    }
-                    total = diff(fScore, uScore);
-                    compareScore += total;
-                }
-                console.log(compareScore)
-                compareScore = 0;
-            }
-        });
-    </script>
-
 
 </body>
 

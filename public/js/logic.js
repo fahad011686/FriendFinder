@@ -1,7 +1,18 @@
 
+
 $("#submit").on("click", function (e) {
     e.preventDefault();
 
+    getInfo();
+
+    // window.location = "./home.html";
+
+
+
+
+});
+
+function getInfo() {
     var userInfo = {
         name: $("#name").val().trim(),
         age: $("#age").val().trim(),
@@ -18,34 +29,34 @@ $("#submit").on("click", function (e) {
             $('input[id=q10]:checked').val()
         ]
     }
-
-    window.location = "./home.html";
-
-    console.log(userInfo);
+    console.log("User input saved.")
     $.post("/api/friends", userInfo, function (data) { });
+
 
     uScore = userInfo.scores;
 
+    matchMake();
+
+}
+
+function matchMake() {
     $.get("/api/friends", function (data) {
+
         compareScore = 0;
         for (var i = 0; i < data.length; i++) {
             for (var o = 0; o < data[i].scores.length; o++) {
                 fScore = data[i].scores[o];
-                // console.log(fScore)
                 function diff(a, b) {
                     return Math.abs(a - b);
                 }
-                total = diff(fScore, uScore);
+                total = diff(fScore, uScore[o]);
                 compareScore += total;
             }
             console.log(compareScore)
-            if (compareScore <= 40){
+            if (compareScore <= 20) {
                 console.log("You have a match!")
             }
             compareScore = 0;
         }
-    });
-
-
-})
-
+    })
+}

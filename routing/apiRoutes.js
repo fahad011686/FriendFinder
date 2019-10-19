@@ -1,6 +1,5 @@
 var path = require("path");
 var userInfo = require("../app/data/friends.js");
-console.log(userInfo);
 
 module.exports = function (server) {
     server.post("/api/friends", function (req, res) {

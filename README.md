@@ -7,23 +7,18 @@
 ## Function
 
 ```javascript
-$.get("/api/friends", function (data) {
-            uScore = 5;
+function matchMake() {
+    $.get("/api/friends", function (data) {
+        compareScore = 0;
+        for (var i = 0; i < data.length; i++) {
+            for (var o = 0; o < data[i].scores.length; o++) {
+                fScore = data[i].scores[o];
+                function diff(a, b) {return Math.abs(a - b);}
+                total = diff(fScore, uScore[o]);
+                compareScore += total;}
+            if (compareScore <= 20) {console.log("You have a match!")}
             compareScore = 0;
-            for (var i = 0; i < data.length; i++) {
-                for (var o = 0; o < data[i].scores.length; o++) {
-                    fScore = data[i].scores[o];
-                    // console.log(fScore)
-                    function diff(a, b) {
-                        return Math.abs(a - b);
-                    }
-                    total = diff(fScore, uScore);
-                    compareScore += total;
-                }
-                console.log(compareScore)
-                compareScore = 0;
-            }
-        });                      
+        }})}                 
 ```
 
 *FF* saves an array via API based on a survey. This array is compared using the function above to match you with a preset user.

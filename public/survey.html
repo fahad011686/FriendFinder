@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Survey</title>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+
 </head>
 
 <body>
@@ -93,39 +93,9 @@
             <input type="radio" id="q10" value="4">Pan<br>
             <input type="radio" id="q10" value="5">New York Style<br>
         </div>
-        <button type="submit" id="submit">Submit</button>
+        <button type="submit" id="submit">Find Your Match!</button>
     </form>
 </body>
 <script src="js/logic.js"></script>
-<!-- <script>
-    $("#submit").on("click", function (e) {
-        e.preventDefault();
-
-        var userInfo = {
-            name: $("#name").val().trim(),
-            age: $("#age").val().trim(),
-            scores: [
-                $('input[id=q1]:checked').val(),
-                $('input[id=q2]:checked').val(),
-                $('input[id=q3]:checked').val(),
-                $('input[id=q4]:checked').val(),
-                $('input[id=q5]:checked').val(),
-                $('input[id=q6]:checked').val(),
-                $('input[id=q7]:checked').val(),
-                $('input[id=q8]:checked').val(),
-                $('input[id=q9]:checked').val(),
-                $('input[id=q10]:checked').val()
-            ]
-        }
-
-        window.location = "./home.html";
-
-        console.log(userInfo);
-        $.post("/api/friends", userInfo, function (data) {
-            
-            }
-        )
-    })
-</script> -->
 
 </html>
