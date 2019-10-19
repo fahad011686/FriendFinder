@@ -4,7 +4,30 @@
 
 *Friend Finder* is a full-stack application utilizing Express routing to capture and compare user data, and match you to a new (virtual) friend. The app is hosted online through Heroku.
 
-## Function
+## Home Page
+
+![home](./public/img/1.png)
+
+The landing page offers you two choices:
+
+* **Survey** - Here you can take a short multiple choice test.
+* **Friends** - This is an overview of the virtual friends you might match with.
+
+## Survey
+
+![survey](./public/img/2.png)
+
+This page presents you with 10 simple questions that will capture your personality type. It is a basic form made using HTML and CSS, with the information being captured by jQuery. This user data is saved in the form of a JSON/api on the next page:
+
+## Friends
+
+Here we can see the virtual friends that were programmed into the application, and any new user data. They are displayed using API data and jQuery to make a simple entry for each. The html is a cleaner presentation of the user data api and updates as new entries are logged.
+
+![friends](./public/img/3.png)
+
+## Match Function
+
+Here is the gist of the Javascript logic used to compare users. *FF* loops through the array of saved survey answers,comparing them with each of your answers. The difference between each answer is then totaled and if the score is below a predetermined number (20), you will get a match. This process is repeated though the entire database of friends.
 
 ```javascript
 function matchMake() {
@@ -20,33 +43,7 @@ function matchMake() {
             compareScore = 0;
         }})}                 
 ```
+(This is an early draft of the function, it will go through more changes.)
 
-*FF* saves an array via API based on a survey. This array is compared using the function above to match you with a preset user.
 
-## Home Page
-
-![home](./app/img/home.png)
-
-The landing page offers you three choices:
-
-* **Survey** - Here you can take a short multiple choice test.
-* **Friends** - This is an overview of the virtual friends you might match with.
-* **Match!** - This will run the matchmaker, to pair you up with a potential new friend!
-
-## Survey
-
-![survey](./app/img/survey.png)
-
-This page presents you with 10 simple questions that will capture your personality type. It is a basic form made using HTML and jQuery.
-
-## Friends
-
-![friends](./app/img/friends.png)
-
-Here we can see the virtual friends that were programmed into the application. They are displayed using API data and jQuery to make a simple entry for each.
-
-## Match!
-
-![match](./app/img/match.png)
-
-The match page runs the matchmaking function and displays the closest friend.
+The matches will be pushed to a new array that will be presented to the user, showcasing all of their potential friend matches!

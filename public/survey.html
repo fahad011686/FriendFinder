@@ -6,23 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Survey</title>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="https://code.jquery.com/jquery.js"></script>
 
 </head>
 
 <body>
+    <a href="./home.html"><img class="container" src="img/logo_header.png"></a>
+
     <form>
-        <label for="">Name</label><br>
-        <input type="text" name="" id="name"><br>
-        <label for="">Age</label><br>
+        <label for="">Name: </label>
+        <input type="text" name="" id="name"><br><br>
+        <label for="">Age: </label>
         <input type="number" name="" id="age"><br>
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
         <div class="questionBox">
             What's Your Favorite Season?<br>
             <input type="radio" id="q1" value="1">Spring<br>
-            <input type="radio" id="q1" value="3">Summer<br>
-            <input type="radio" id="q1" value="5">Fall<br>
-            <input type="radio" id="q1" value="7">Winter<br>
+            <input type="radio" id="q1" value="2">Summer<br>
+            <input type="radio" id="q1" value="3">Fall<br>
+            <input type="radio" id="q1" value="4">Winter<br>
         </div>
+      
         <div class="questionBox">
             What's Your Favorite Pokemon?<br>
             <input type="radio" id="q2" value="1">Pikachu<br>
@@ -67,8 +77,8 @@
         <div class="questionBox">
             When are you the most productive?<br>
             <input type="radio" id="q7" value="1">Morning<br>
-            <input type="radio" id="q7" value="5">Evening<br>
-            <input type="radio" id="q7" value="7">Night<br>
+            <input type="radio" id="q7" value="2">Evening<br>
+            <input type="radio" id="q7" value="3">Night<br>
         </div>
         <div class="questionBox">
             What genre of movies do you prefer?<br>
@@ -93,7 +103,9 @@
             <input type="radio" id="q10" value="4">Pan<br>
             <input type="radio" id="q10" value="5">New York Style<br>
         </div>
+        <div class="submitBox">
         <button type="submit" id="submit">Find Your Match!</button>
+        </div>
     </form>
 </body>
 <script src="js/logic.js"></script>
