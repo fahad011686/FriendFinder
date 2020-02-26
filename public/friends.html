@@ -13,14 +13,11 @@
 </head>
 
 <body>
-    <a href="./home.html"><img class="container" src="img/logo_header.png"></a>
+    <a href="./home.html"> <img class="logo_container" src="img/logo_header.png" style="width:100%">
+    </a>
 
-    <h1 class="container">All Friends</h1>
+    <h1 class="container">All Friends<br><hr></h1>
 
-    <div class="container">
-        <a href="./home.html">Back Home</a>
-
-    </div>
     <!-- display all friends -->
     <script type="text/javascript">
         $.get("/api/friends", function (data) {
@@ -29,11 +26,20 @@
             for (var i = 0; i < data.length; i++) {
 
                 // console.log(data[i]);
-                $('.container').append(`<div><div class='name'>${data[i].name}</div><div class='age'>Age: ${data[i].age}</div><div class='scores'>${data[i].scores}</div><hr>`);
+                $('.container').append(`
+                <div class='friend'>
+                    <div class='name'>${data[i].name}</div>
+                <div class='age'>Age: ${data[i].age}</div>
+                <div class='scores'>${data[i].scores}</div>
+                </div>
+                <hr>
+                `);
             }
         });
     </script>
 
+    <a href="./home.html">Back Home</a>
+    <br>
     <a href="/api/friends">View as raw API data.</a>
 
 </body>
