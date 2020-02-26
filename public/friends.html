@@ -21,11 +21,10 @@
     <!-- display all friends -->
     <script type="text/javascript">
         $.get("/api/friends", function (data) {
-            console.log(data);
-            // var i;
-            for (var i = 0; i < data.length; i++) {
+            var data2=data.reverse();  
 
-                // console.log(data[i]);
+            console.log(data2);
+            for (var i = 0; i < data.length; i++) {
                 $('.container').append(`
                 <div class='friend'>
                     <div class='name'>${data[i].name}</div>
