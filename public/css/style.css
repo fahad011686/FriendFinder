@@ -7,7 +7,6 @@ body {
     box-sizing: content-box;
     width: 36%;
     align-items: center;
-
     height: 200px;
     float: left;
     border: solid rgb(85, 45, 35) 5px;
@@ -27,7 +26,11 @@ body {
 
 .container {
     text-align: center;
-    font-size: 20px;
+    /* font-size: 20px; */
     padding: 25px;
 
+}
+
+.logo-container {    
+    display: inline-block;
 }
