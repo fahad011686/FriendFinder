@@ -1,11 +1,9 @@
-
-
 $("#submit").on("click", function (e) {
     e.preventDefault();
 
     getInfo();
 
-    // window.location = "./home.html";
+    window.location = "./friends.html";
 
 
 
