@@ -4,6 +4,9 @@
 
 *Friend Finder* is a full-stack application utilizing Express routing to capture and compare user data, and match you to a new (virtual) friend. The app is hosted online through Heroku.
 
+[Link](https://serene-thicket-61059.herokuapp.com/)
+ to deployed app.
+
 ## Home Page
 
 ![home](./public/img/1.png)
